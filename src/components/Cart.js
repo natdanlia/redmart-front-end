@@ -1,53 +1,40 @@
 import React from 'react'
+import CartCard from './CartCard'
 import { Link } from 'react-router-dom'
 
 class Cart extends React.Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.state = {
-      input: 1
+      total: this.totalPrice()
     }
   }
 
   totalPrice = () => {
     let tot = 0
+    // console.log(this.props.cart)
       this.props.cart.forEach((k)=> tot += (k.item.price * k.amount))
     // debugger
     return tot
   }
 
-  handleChange = (event) => {
+  updateTotal = (amount) => {
     this.setState({
-      input: event.target.value
+      total: this.state.total + amount
     })
   }
 
   render () {
-
+    console.log(this.totalPrice())
     return(
       <div>
         <Link to={'/items'}>
           <button className="ui button"> Continue Shopping </button>
         </Link>
 
-        {this.props.cart.map((c, idx) => {
-          console.log(c)
-
-          return (
-            <div  key={idx} >
-                <h1>{c.item.title}</h1>
-                <p>Single Price {c.item.price}</p>
-
-                <label for='quantity'>quantity</label>
-                <input value={this.state.input} name="quantity" type='number' onChange={this.handleChange}/>
-                <br></br>
-                    <button data-item-id={c.id} onClick={this.props.removeClick}className="ui button"> remove from cart </button>
-
-              </div>
-            )
-          })
-        }
-        <p>TOTAL PRICE = {this.totalPrice()}</p>
+        {this.props.cart.map((car, idx) => <CartCard updateTotal={this.updateTotal}
+        removeClick={this.props.removeClick} car={car} key={idx}/> )}
+        <p>TOTAL PRICE = {this.state.total}</p>
       </div>
     )
   }
