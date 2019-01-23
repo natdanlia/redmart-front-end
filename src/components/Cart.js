@@ -65,13 +65,35 @@ class Cart extends React.Component {
     })
   }
 
+  checkOut = () => {
+    let token = localStorage.getItem('token')
+    let id = this.props.currentUser.cart.id
+    fetch(`http://localhost:3005/carts/${id}/checkout`, {
+      method: "DELETE",
+      headers: {
+        "Authorization" : `Bearer ${token}`
+      }
+    }).then(()=> {
+      this.setState({
+        total: 0
+      })
+      this.props.removeCartCard()
+    })
+  }
+
   render () {
 
     return(
       <div>
         <Link to={'/items'}>
           <button className="ui button"> Continue Shopping </button>
+
         </Link>
+
+
+          <button onClick={this.checkOut}className="ui button"> Check Out </button>
+
+
         <Card>
           <Image src={this.props.currentUser.img} />
           <Card.Content>

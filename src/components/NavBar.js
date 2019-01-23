@@ -12,7 +12,7 @@ const NavBar = (props) => {
 
 
 
-    <div class="ui red inverted massive menu">
+    <div class="ui white inverted massive menu" >
 
        { props.logged ? (
 

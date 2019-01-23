@@ -51,10 +51,10 @@ class LoginForm extends React.Component {
     return (
       <div className="welcome">
       <div className="ui middle aligned center aligned grid">
-        <div className="column">
+        <div  className="column">
 
-        <h2 class="ui white image header">
-          <div class="content">
+        <h2 class="ui image header">
+          <div id="loging" class="content">
             Log-in to your account
           </div>
         </h2>

@@ -12,7 +12,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-div.welcome{
+.welcome{
   height: 100%;
   background-image: url('https://hostpapa.blog/blog/wp-content/uploads/2016/01/E-Commerce-SEO-%E2%80%93-How-to-Do-It-Right.jpg');
   background-position: center;
@@ -37,7 +37,10 @@ div.welcome{
   width: 100px !important;
   font-size: 15px;
 }
-.ui.white.image.header{
+.ui.white.inverted.massive.menu{
+  background: #FF4D61;
+}
+#loging{
   color: white;
 }
 .column {

@@ -223,9 +223,12 @@ fetchUserData = () => {
 
         this.props.history.push('/items')
       })
+  }
 
-
-
+  removeCartCard = () => {
+    this.setState({
+      cart: this.state.cart.filter((sin) => sin.cart.id !== this.state.currentUser.cart.id)
+    })
   }
   render() {
     console.log(this.props);
@@ -247,7 +250,7 @@ fetchUserData = () => {
 
           <Route path = '/cart' render={ (props) => {
               if (this.state.currentUser) {
-                return <Cart cart={this.state.cart} currentUser={this.state.currentUser} changeCart={this.changeCart} removeClick={this.removeClick}/>
+                return <Cart cart={this.state.cart} currentUser={this.state.currentUser} changeCart={this.changeCart} removeCartCard={this.removeCartCard} removeClick={this.removeClick}/>
               }
               return <Redirect to="/items" />
             } } />
