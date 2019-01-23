@@ -12,3 +12,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+div.welcome{
+  height: 100%;
+  background-image: url('https://hostpapa.blog/blog/wp-content/uploads/2016/01/E-Commerce-SEO-%E2%80%93-How-to-Do-It-Right.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+}
+/* .ui.middle.aligned.center.aligned.grid{
+  height: 780px;
+  width: 500px;
+  text-align: center;
+  position: center;
+  left: 50%;
+  position: absolute;
+  margin: auto;
+  left: 50%;
+} */
+
+.ui.circular.massive.icon.button{
+  height: 100px !important;
+  width: 100px !important;
+  font-size: 15px;
+}
+.ui.white.image.header{
+  color: white;
+}
+.column {
+  margin-top:180px;
+  margin-bottom: 290px;
+  margin-right: 500px;
+  margin-left: 500px;
+
+}

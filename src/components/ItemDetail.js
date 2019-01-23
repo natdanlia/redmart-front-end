@@ -13,7 +13,12 @@ const ItemDetail = (props, item) => {
       <img src={props.item.picture}/>
       <p>{props.item.description}</p>
 
-      <button className="ui button" onClick={() => props.addToCartClick(props.item)}>Add to Cart</button>
+        <button className="ui button" onClick={() => {
+            props.currentUser ? props.addToCartClick(props.item)  : alert("Please log in to add item to your cart")
+          }
+        }>Add to Cart</button>
+
+      <button className="ui button" onClick={() => props.deleteItem(props.item)}>Delete Item</button>
 
 
     </div> : null
