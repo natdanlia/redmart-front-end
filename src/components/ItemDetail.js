@@ -1,27 +1,53 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import { Rating } from 'semantic-ui-react'
 
 const ItemDetail = (props, item) => {
   // debugger
   return (
-    props.item ?
-    <div>
-      <h1>{props.item.title}</h1>
-      <h3>Available amount: {props.item.amount}</h3>
-      <p>Price: {props.item.price}</p>
-      <img src={props.item.picture}/>
-      <p>{props.item.description}</p>
 
-        <button className="ui button" onClick={() => {
+
+
+
+    props.item ?
+
+    <div>
+      <div id='bigHeader'><img id='pInsideBigHeader' src='https://i.imgur.com/OBxqyZY.png' ></img></div>
+    <div className="ui centered card">
+      <div id='itemDetailImage'className="image">
+      <img src={props.item.picture}/>
+      </div>
+
+      <div className="content">
+        <a className="header">{props.item.title}</a>
+          <p>Price: {props.item.price}</p>
+          <div class="meta">
+            <span>Available amount: {props.item.amount}</span>
+          </div>
+
+            <p>Category: {props.item.category}</p>
+
+          <div class="description">
+            {props.item.description}
+        </div>
+
+      </div>
+      <div className="extra">
+        Rating: <Rating icon='star' defaultRating={5} maxRating={5} />
+      </div>
+
+  <div className="extra content">
+    <div class="ui two buttons">
+        <button className="ui basic green button" onClick={() => {
             props.currentUser ? props.addToCartClick(props.item)  : alert("Please log in to add item to your cart")
           }
         }>Add to Cart</button>
-
-      <button className="ui button" onClick={() => props.deleteItem(props.item)}>Delete Item</button>
-
-
-    </div> : null
+      {props.currentUser ?
+      <button className="ui basic red button" onClick={() => props.deleteItem(props.item)}>Delete Item</button> : null}
+    </div>
+  </div>
+  </div>
+</div>: null
   )
 }
 

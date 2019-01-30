@@ -84,27 +84,35 @@ class Cart extends React.Component {
   render () {
 
     return(
-      <div>
-        <Link to={'/items'}>
-          <button className="ui button"> Continue Shopping </button>
-
-        </Link>
+      <div class='cartDiv'>
 
 
-          <button onClick={this.checkOut}className="ui button"> Check Out </button>
+
+<div id='bigHeader'><img id='pInsideBigHeader' src='https://i.imgur.com/OBxqyZY.png' ></img></div>
 
 
-        <Card>
-          <Image src={this.props.currentUser.img} />
-          <Card.Content>
-            <Card.Header>{this.props.currentUser.name}</Card.Header>
 
-            <Card.Description>{this.props.currentUser.email}</Card.Description>
-          </Card.Content>
-        </Card>
-        {this.props.cart.map((car, idx) => <CartCard updateTotal={this.updateTotal}
+
+        {this.props.cart.map((car, idx) => <CartCard id='jj'updateTotal={this.updateTotal}
         removeClick={this.props.removeClick} currentUser={this.props.currentUser}deduct={this.deduct} car={car} changeCart={this.props.changeCart} key={idx}/> )}
-        <p>TOTAL PRICE = {this.state.total}</p>
+
+        <p id='totalPrice'>TOTAL PRICE = {this.state.total}</p>
+          <Card id='profileCard'>
+            <Image src={this.props.currentUser.img} />
+            <Card.Content>
+              <Card.Header>{this.props.currentUser.name}</Card.Header>
+
+              <Card.Description>{this.props.currentUser.email}</Card.Description>
+            </Card.Content>
+          </Card>
+
+        <button onClick={this.checkOut} className="ui basic yellow button"> Check Out </button>
+
+          <Link to={'/items'}>
+            <button className="ui basic green button"> Continue Shopping </button>
+          </Link>
+
+
       </div>
     )
   }

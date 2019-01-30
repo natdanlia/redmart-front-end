@@ -44,17 +44,16 @@ let token = localStorage.getItem('token')
   }
 
   render () {
-    console.log(this.props.currentUser.cart.id)
-    console.log(this.props.car)
-    return (
-      this.props.currentUser.cart.id === this.props.car.cart.id ? <div>
-          <h1>{this.props.car.item.title}</h1>
-          <p>Single Price {this.props.car.item.price}</p>
 
-          <label htmlFor='quantity'>quantity</label>
-          <input data-item-id={this.props.car.id} min="1" max="50" value={this.state.input} name="quantity" type='number' onChange={this.handleChange}/>
+    return (
+      this.props.currentUser.cart.id === this.props.car.cart.id ? <div className="ui five secondary item menu" id='cartCard'>
+          <h3 className="item">{this.props.car.item.title}</h3>
+          <p className="item"> {this.props.car.item.price}</p>
+
+          <label className="item" htmlFor='quantity'>X</label>
+          <input className="ui input" data-item-id={this.props.car.id} min="1" max="50" value={this.state.input} name="quantity" type='number' onChange={this.handleChange}/>
           <br></br>
-              <button data-item-id={this.props.car.id} onClick={this.handleRemove} className="ui button"> remove from cart </button>
+              <button className="item" data-item-id={this.props.car.id} onClick={this.handleRemove} className="ui red button"> Delete From Cart </button>
 
         </div>
       : null

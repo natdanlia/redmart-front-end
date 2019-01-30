@@ -62,7 +62,10 @@ class ItemForm extends React.Component {
   }
   render () {
     return (
-      <form className="ui form" onSubmit={event => this.formSubmit(event)}>
+      <div>
+
+        <div id='bigHeader'><img id='pInsideBigHeader' src='https://i.imgur.com/OBxqyZY.png' ></img></div>
+      <form id='itemForm' className="ui form" onSubmit={event => this.formSubmit(event)}>
         <h1>Add New Item</h1>
         <div className="field">
           <div className="two fields">
@@ -96,12 +99,13 @@ class ItemForm extends React.Component {
 
     <div class="field">
       <label htmlFor="description">Description</label>
-      <textarea type="text" name="description" value={this.state.description} onChange={this.handleAllChange}></textarea>
+      <input type="text" name="description" value={this.state.description} onChange={this.handleAllChange}></input>
     </div>
 
 
         <input type="submit" className="ui button green" value="Submit Item"/>
       </form>
+      </div>
     )
   }
 }

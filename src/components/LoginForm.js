@@ -51,7 +51,7 @@ class LoginForm extends React.Component {
     return (
       <div className="welcome">
       <div className="ui middle aligned center aligned grid">
-        <div  className="column">
+        <div   className="column">
 
         <h2 class="ui image header">
           <div id="loging" class="content">
@@ -73,7 +73,7 @@ class LoginForm extends React.Component {
                   <input onChange={this.handleChange} value={this.state.password} type="password" name="password" placeholder="Password"/>
                 </div>
               </div>
-              <button className="ui fluid large teal submit button">Log In</button>
+              <button id='loginClick'className="ui fluid large teal submit button">Log In</button>
             </div>
           </form>
           <div class="ui message">

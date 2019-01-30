@@ -151,8 +151,8 @@ fetchUserData = () => {
     })
   }
 
-  mainFilter = (event) =>{
-    let targetName = event.target.name.toLowerCase()
+  mainFilter = (event) => {
+    let targetName = event.currentTarget.name.toLowerCase()
     // let targetValue = event.target.value
     this.setState({
       // filterSearch: !this.state.filterSearch,

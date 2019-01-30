@@ -12,12 +12,15 @@ const NavBar = (props) => {
 
 
 
-    <div class="ui white inverted massive menu" >
+    <div class="ui red massive menu" >
 
        { props.logged ? (
 
          <Fragment>
-
+           <NavLink id='logo'className="item" to="/items">
+             <img id='navbarLogo' src='https://i.imgur.com/OBxqyZY.png' ></img>
+             <p style={{fontSize: '40px', color:'red', fontStyle:'cursive'}}>Red Mart</p>
+         </NavLink>
       <NavLink className="item" to="/about">About </NavLink>
 
       <NavLink className="item" to="/items"> All Items </NavLink>
@@ -41,6 +44,10 @@ const NavBar = (props) => {
       </div>
     </Fragment>) : (
       <Fragment>
+        <NavLink id='logo'className="item" to="/items">
+          <img id='navbarLogo' src='https://i.imgur.com/OBxqyZY.png' ></img>
+          <p style={{fontSize: '40px', color:'red', fontStyle:'cursive'}}>Red Mart</p>
+      </NavLink>
       <NavLink
         className="item"
         to="/about"
