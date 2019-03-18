@@ -17,7 +17,7 @@ let token = localStorage.getItem('token')
     // this.setState({
     //   input: event.target.value
     // })
-    fetch(`http://localhost:3005/cart_items/${event.target.dataset.itemId}`, {
+    fetch(`https://red-mart-backend.herokuapp.com/cart_items/${event.target.dataset.itemId}`, {
       method: 'PATCH',
       headers: {
         'Accept': 'application/json',

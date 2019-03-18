@@ -14,7 +14,7 @@ class Cart extends React.Component {
 
   componentDidMount(){
     let token = localStorage.getItem('token')
-    fetch('http://localhost:3005/cart_items', {
+    fetch('https://red-mart-backend.herokuapp.com/cart_items', {
       method: "GET",
       headers: {
         "Authorization" : `Bearer ${token}`
@@ -68,7 +68,7 @@ class Cart extends React.Component {
   checkOut = () => {
     let token = localStorage.getItem('token')
     let id = this.props.currentUser.cart.id
-    fetch(`http://localhost:3005/carts/${id}/checkout`, {
+    fetch(`https://red-mart-backend.herokuapp.com/carts/${id}/checkout`, {
       method: "DELETE",
       headers: {
         "Authorization" : `Bearer ${token}`

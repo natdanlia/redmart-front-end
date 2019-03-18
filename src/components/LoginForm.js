@@ -20,7 +20,7 @@ class LoginForm extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    fetch('http://localhost:3005/api/v1/login', {
+    fetch('https://red-mart-backend.herokuapp.com/api/v1/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -53,8 +53,8 @@ class LoginForm extends React.Component {
       <div className="ui middle aligned center aligned grid">
         <div   className="column">
 
-        <h2 class="ui image header">
-          <div id="loging" class="content">
+        <h2 className="ui image header">
+          <div id="loging" className="content">
             Log-in to your account
           </div>
         </h2>
@@ -76,7 +76,7 @@ class LoginForm extends React.Component {
               <button id='loginClick'className="ui fluid large teal submit button">Log In</button>
             </div>
           </form>
-          <div class="ui message">
+          <div className="ui message">
             New to us? <a href="#">Sign Up</a>
           </div>
         </div>

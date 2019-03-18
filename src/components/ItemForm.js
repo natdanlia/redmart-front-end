@@ -26,7 +26,7 @@ class ItemForm extends React.Component {
       console.log(this.props);
       let token = localStorage.getItem('token')
       event.preventDefault()
-      fetch('http://localhost:3005/items', {
+      fetch('https://red-mart-backend.herokuapp.com/items', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

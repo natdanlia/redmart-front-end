@@ -33,7 +33,7 @@ class App extends Component {
 
   componentDidMount(){
     console.log('mounted')
-    fetch('http://localhost:3005/items')
+    fetch('https://red-mart-backend.herokuapp.com/items')
     .then(res => res.json())
     .then( data => {
       console.log('I will')
@@ -56,7 +56,7 @@ class App extends Component {
 
 fetchUserData = () => {
   let token = localStorage.getItem('token')
-  fetch(`http://localhost:3005/api/v1/profile`, {
+  fetch(`https://red-mart-backend.herokuapp.com/api/v1/profile`, {
     method: "GET",
     headers: {
       "Authorization" : `Bearer ${token}`
@@ -71,7 +71,7 @@ fetchUserData = () => {
 
   })
 
-    fetch('http://localhost:3005/cart_items', {
+    fetch('https://red-mart-backend.herokuapp.com/cart_items', {
       method: "GET",
       headers: {
         "Authorization" : `Bearer ${token}`
@@ -91,7 +91,7 @@ fetchUserData = () => {
     console.log(this.state);
     let token = localStorage.getItem('token')
     let error = false
-      fetch('http://localhost:3005/cart_items', {
+      fetch('https://red-mart-backend.herokuapp.com/cart_items', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -121,7 +121,7 @@ fetchUserData = () => {
   removeClick = (event) => {
     let token = localStorage.getItem('token')
     let iId = parseInt(event.target.dataset.itemId)
-    fetch(`http://localhost:3005/cart_items/${iId}`, {
+    fetch(`https://red-mart-backend.herokuapp.com/cart_items/${iId}`, {
     method: 'DELETE',
     headers: {
       "Authorization" : `Bearer ${token}`
@@ -210,7 +210,7 @@ fetchUserData = () => {
   deleteItem = (item) => {
     let token = localStorage.getItem('token')
     let id = parseInt(item.id)
-    fetch(`http://localhost:3005/items/${id}`, {
+    fetch(`https://red-mart-backend.herokuapp.com/items/${id}`, {
         method: 'DELETE',
         headers: {
           "Authorization" : `Bearer ${token}`

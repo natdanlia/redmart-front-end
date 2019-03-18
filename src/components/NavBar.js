@@ -12,7 +12,7 @@ const NavBar = (props) => {
 
 
 
-    <div class="ui red massive menu" >
+    <div className="ui red massive menu" >
 
        { props.logged ? (
 
