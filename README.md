@@ -21,7 +21,7 @@ password: Guest1234
 
 This is the backend of RedMart Application where one can buy and sell any items online.
 
-The backend of the application is found here.
+The backend of the application is found [here](https://github.com/natdanlia/redmart-back-end "RedMart backend")
 
 Two-minute video presentation of the application is available here.
 
